@@ -33,5 +33,8 @@ public class Main {
 
         System.out.printf("%s:\t%d ms\n", "Redis", (stopRedis - startRedis));
         System.out.printf("%s:\t%d ms\n", "MySQL", (stopMysql - startMysql));
+
+        sessionFactory.close();
+        redis.prepareRedisClient().shutdown();
     }
 }
